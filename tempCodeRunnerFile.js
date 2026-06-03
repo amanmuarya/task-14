@@ -1,0 +1,1 @@
+ Sum += Math.pow(digit, Digits);

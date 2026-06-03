@@ -1,16 +1,16 @@
 //     Main function to perform all required operations on a given number
 
-function analyzeNumber(n) {
+function Num(n) {
     console.log(``);
-    console.log(` Analyzing Number: ${n}`);
+    console.log(` Num:  ${n}`);
     console.log(``);
 
-    // 1. Find the sum of first n numbers and use for loop 
-    let sumOfFirstN = 0;
+    let FirstN = 0;
+    // loop stating 1 and ending n 
     for (let i = 1; i <= n; i++) {
-        sumOfFirstN += i;
+        FirstN += i;
     }
-    console.log(`1. Sum of first ${n} numbers: ${sumOfFirstN}`);
+    console.log(`1. Sum of first ${n} numbers: ${FirstN}`);
 
     // 2. Print table of n 
     console.log(`2. Table of ${n}:`);
@@ -18,21 +18,21 @@ function analyzeNumber(n) {
         console.log(`   ${n} x ${i} = ${n * i}`);
     }
 
-    // 3. Check if it is a prime number and go else cheac n% i ===0 
-
- let isPrime = true;
+    // 3. Check if it is a prime number 
+    // 1 and negitive number never a prime number
+ let Prime = true;
  if (n <= 1) {
-        isPrime = false;
+        Prime = false;
 
 } else {
-    for (let i = 2; i <= Math.sqrt(n); i++) {
+     for (let i = 2; i < n; i++) {
 if (n % i === 0) {
-  isPrime = false;
+  Prime = false;
   break;
  }
     }
     }
-    console.log(`3. Is Prime: ${isPrime}`);
+    console.log(`3. Is Prime: ${Prime}`);
 
     // 4. Print all its factors
     let factors = [];
@@ -45,34 +45,34 @@ for (let i = 1; i <= n; i++) {
 console.log(`4. Factors: ${factors.join(', ')}`);
 
     // 5. Find sum of all digits of a number
-let tempForSum = n;
-let sumOfDigits = 0;
+let ForSum = n;
+let Digits = 0;
 
- while (tempForSum > 0) {
+ while (ForSum > 0) {
 
-    sumOfDigits += tempForSum % 10;
-         // Extract the last digit
- tempForSum = Math.floor(tempForSum / 10); 
+    Digits +=ForSum % 10;
+      
+ ForSum = Math.floor(ForSum / 10); 
 
      // Remove the last digit
  }
- console.log(`5. Sum of digits: ${sumOfDigits}`);
+ console.log(`5. Sum of digits: ${Digits}`);
 
     // 6. Check if it is an Armstrong number
-let tempForArmstrong = n;
- let numberOfDigits = String(n).length;
- let armstrongSum = 0;
+let Armstrong = n;
+ let Digit = String(n).length;
+ let Sum = 0;
 
-    while (tempForArmstrong > 0) {
-        let digit = tempForArmstrong % 10;
+    while (Armstrong > 0) {
+        let digit = Armstrong % 10;
 
- armstrongSum += Math.pow(digit, numberOfDigits); 
+ Sum += Math.pow(digit); 
         // Raise to power of total digits
 
-     tempForArmstrong = Math.floor(tempForArmstrong / 10);
+     Armstrong = Math.floor(Armstrong / 10);
     }
 
-    let isArmstrong = (armstrongSum === n);
+    let isArmstrong = (Sum === n);
     console.log(`6. Is Armstrong number: ${isArmstrong}`);
 }
 
@@ -90,10 +90,10 @@ let num5 = 9474;
 // 4-digit Armstrong number
 
 // Displaying the results of each operation to the user using console.log
-analyzeNumber(num1);
-analyzeNumber(num2);
-analyzeNumber(num3);
-analyzeNumber(num4);
-analyzeNumber(num5);
+Number(num1);
+Number(num2);
+Number(num3);
+Number(num4);
+Number(num5);
 
 // clear , cls 
